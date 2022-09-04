@@ -30,6 +30,8 @@ package Generic_Router is
 
       entry Send_Message    (Message :     Messages_Client);
       entry Receive_Message (Message : out Messages_Mailbox);
+      entry Find_Route (Message : Messages_Table);
+      entry Pass_Message(Message : out Messages_R);
 
       entry Shutdown;
 

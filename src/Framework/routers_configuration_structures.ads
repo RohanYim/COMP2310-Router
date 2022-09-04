@@ -22,7 +22,7 @@ package Routers_Configuration_Structures is
       Comms_Timeout       : Duration                 := 0.1;
       Test_Mode           : Test_Modes               := One_To_All;
       Dropouts            : Natural                  := 0;
-      Repeats             : Positive                 := 100;
+      Repeats             : Positive                 := 3;
       Help                : Boolean                  := False;
    end record;
 

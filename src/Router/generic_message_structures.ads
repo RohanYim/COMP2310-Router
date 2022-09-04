@@ -33,4 +33,24 @@ package Generic_Message_Structures is
 
    --  Add one or multiple more messages formats here ..
 
+   -- local table to store Dijkstra array S
+   type Element_S is record
+      Next        : Router_Range := Router_Range'Invalid_Value;
+      Dis       : Natural      := 10000;
+   end record;
+   type Local_Table_S is array (Router_Range) of Element_S;
+
+   type Messages_Table is record
+      Sender             : Router_Range     := Router_Range'Invalid_Value;
+      Table : Local_Table_S;
+   end record;
+
+   type Messages_R is record
+      Sender      : Router_Range     := Router_Range'Invalid_Value;
+      Destination : Router_Range     := Router_Range'Invalid_Value;
+      The_Message : The_Core_Message := Message_Strings.To_Bounded_String ("");
+      Hop_Counter : Natural          := Natural'Invalid_Value;
+   end record;
+
+
 end Generic_Message_Structures;
